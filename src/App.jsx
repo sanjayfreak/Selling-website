@@ -4,7 +4,7 @@ import { globalStyles } from "./constants";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
-import WhyMe from "./components/WhyMe";
+import Whyme from "./components/Whyme";
 import HowItsWorks from "./components/HowItsWorks";
 import Testimonials from "./components/Testimonials";
 import FinalCTA from "./components/FinalCTA";
