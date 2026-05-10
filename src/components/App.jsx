@@ -2,7 +2,7 @@ import { globalStyles } from "./constants";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
-import WhyMe from "./components/WhyMe";
+import Whyme from "./components/Whyme";
 import HowItWorks from "./components/HowItWorks";
 import Testimonials from "./components/Testimonials";
 import FinalCTA from "./components/FinalCTA";
@@ -15,7 +15,7 @@ export default function App() {
       <Navbar />
       <Hero />
       <Services />
-      <WhyMe />
+      <Whyme />
       <HowItWorks />
       <Testimonials />
       <FinalCTA />
