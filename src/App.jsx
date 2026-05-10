@@ -18,7 +18,7 @@ function Home() {
       <Navbar />
       <Hero />
       <Services />
-      <WhyMe />
+      <Whyme />
       <HowItsWorks />
       <Testimonials />
       <FinalCTA />
