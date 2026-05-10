@@ -37,6 +37,17 @@ const projects = [
     link: "https://portfolio-for-freelancer.vercel.app/",
     image: "/free.png",
   },
+  {
+  id: 4,
+  number: "04",
+  title: "FreshMart Supermarket Website",
+  tag: "Modern Grocery Store · 2026",
+  description:
+    "A premium supermarket website built with React, Tailwind CSS, and Framer Motion featuring smooth animations, interactive shopping experience, responsive layouts, animated cart functionality, and modern grocery-focused UI design inspired by real-world ecommerce platforms.",
+  tech: ["React", "Tailwind CSS", "Framer Motion"],
+  link: "https://supermarket-website-pi.vercel.app",
+  image: "/sup.png",
+},
 ];
 
 export default function Portfolio() {
