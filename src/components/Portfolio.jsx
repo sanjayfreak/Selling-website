@@ -4,39 +4,39 @@ import { HiArrowLeft, HiExternalLink } from "react-icons/hi";
 import { FaWhatsapp } from "react-icons/fa";
 
 const projects = [
-{
-  id: 1,
-  number: "01",
-  title: "Modern Student Portfolio",
-  tag: "Portfolio Website · 2026",
-  description:
-    "A clean and modern student portfolio website designed with smooth animations, responsive layouts, and elegant UI to showcase skills, projects, and achievements professionally.",
-  tech: ["React", "Tailwind CSS", "Framer Motion"],
-  link: "https://portfolio-for-students.vercel.app",
-  image: "/stu.png",
-},
- {
-  id: 2,
-  number: "02",
-  title: "Elite Fitness Gym Website",
-  tag: "Gym Landing Page · 2026",
-  description:
-    "A modern and energetic gym website designed to attract new members with bold visuals, smooth animations, responsive layouts, and strong call-to-action sections for fitness programs and memberships.",
-  tech: ["React", "Tailwind CSS", "Framer Motion"],
-  link: "https://portfolio-for-gym.vercel.app",
-  image: "/gym.png",
-},
- {
-  id: 3,
-  number: "03",
-  title: "Creative Video Editor Portfolio",
-  tag: "Freelancer Portfolio · 2026",
-  description:
-    "A cinematic portfolio website built for a freelance video editor to showcase editing projects, client work, services, and social proof through immersive visuals and smooth user interactions.",
-  tech: ["React", "Tailwind CSS", "Framer Motion"],
-  link: "https://portfolio-for-freelancer.vercel.app/",
-  image: "/free.png",
-},
+  {
+    id: 1,
+    number: "01",
+    title: "Modern Student Portfolio",
+    tag: "Portfolio Website · 2026",
+    description:
+      "A clean and modern student portfolio website designed with smooth animations, responsive layouts, and elegant UI to showcase skills, projects, and achievements professionally.",
+    tech: ["React", "Tailwind CSS", "Framer Motion"],
+    link: "https://portfolio-for-students.vercel.app",
+    image: "/stu.png",
+  },
+  {
+    id: 2,
+    number: "02",
+    title: "Elite Fitness Gym Website",
+    tag: "Gym Landing Page · 2026",
+    description:
+      "A modern and energetic gym website designed to attract new members with bold visuals, smooth animations, responsive layouts, and strong call-to-action sections for fitness programs and memberships.",
+    tech: ["React", "Tailwind CSS", "Framer Motion"],
+    link: "https://portfolio-for-gym.vercel.app",
+    image: "/gym.png",
+  },
+  {
+    id: 3,
+    number: "03",
+    title: "Creative Video Editor Portfolio",
+    tag: "Freelancer Portfolio · 2026",
+    description:
+      "A cinematic portfolio website built for a freelance video editor to showcase editing projects, client work, services, and social proof through immersive visuals and smooth user interactions.",
+    tech: ["React", "Tailwind CSS", "Framer Motion"],
+    link: "https://portfolio-for-freelancer.vercel.app/",
+    image: "/free.png",
+  },
 ];
 
 export default function Portfolio() {
@@ -54,12 +54,26 @@ export default function Portfolio() {
         paddingBottom: 80,
       }}
     >
+      <style>{`
+        @media (max-width: 768px) {
+          .portfolio-back { margin-left: 20px !important; margin-bottom: 40px !important; }
+          .portfolio-card {
+            grid-template-columns: 1fr !important;
+            padding: 28px 20px !important;
+            gap: 16px !important;
+          }
+          .portfolio-number { font-size: 36px !important; }
+          .portfolio-link { align-self: flex-start !important; margin-top: 8px !important; }
+        }
+      `}</style>
+
       {/* Back button */}
       <motion.a
         href="/"
         initial={{ opacity: 0, x: -16 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
+        className="portfolio-back"
         style={{
           display: "inline-flex",
           alignItems: "center",
@@ -98,7 +112,7 @@ export default function Portfolio() {
         </p>
         <h1
           style={{
-            fontSize: "clamp(36px, 6vw, 64px)",
+            fontSize: "clamp(32px, 6vw, 64px)",
             fontWeight: 700,
             letterSpacing: "0.06em",
             margin: 0,
@@ -110,8 +124,7 @@ export default function Portfolio() {
             animation: "shimmer 4s linear infinite",
           }}
         >
-          MY SAMPLE
-           PORTFOLIO'S
+          MY SAMPLE PORTFOLIO'S
         </h1>
         <div
           style={{
@@ -142,6 +155,7 @@ export default function Portfolio() {
             transition={{ duration: 0.7, delay: 0.2 + i * 0.15 }}
             onHoverStart={() => setHovered(project.id)}
             onHoverEnd={() => setHovered(null)}
+            className="portfolio-card"
             style={{
               border: "1px solid",
               borderColor:
@@ -180,6 +194,7 @@ export default function Portfolio() {
 
             {/* Number */}
             <span
+              className="portfolio-number"
               style={{
                 fontSize: "clamp(36px, 4vw, 52px)",
                 fontWeight: 700,
@@ -211,7 +226,7 @@ export default function Portfolio() {
                 {project.tag}
               </p>
 
-              {/* Image / Placeholder */}
+              {/* Image */}
               <div
                 style={{
                   width: "100%",
@@ -219,9 +234,7 @@ export default function Portfolio() {
                   height: project.image ? "auto" : 180,
                   marginBottom: 20,
                   border: "1px solid rgba(212,166,50,0.15)",
-                  background: project.image
-                    ? "none"
-                    : "rgba(212,166,50,0.03)",
+                  background: project.image ? "none" : "rgba(212,166,50,0.03)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -237,24 +250,10 @@ export default function Portfolio() {
                   />
                 ) : (
                   <div style={{ textAlign: "center", padding: 24 }}>
-                    <p
-                      style={{
-                        color: "rgba(212,166,50,0.3)",
-                        fontSize: 11,
-                        letterSpacing: "0.25em",
-                        textTransform: "uppercase",
-                        marginBottom: 8,
-                      }}
-                    >
+                    <p style={{ color: "rgba(212,166,50,0.3)", fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: 8 }}>
                       Add Screenshot
                     </p>
-                    <p
-                      style={{
-                        color: "rgba(212,166,50,0.18)",
-                        fontSize: 11,
-                        letterSpacing: "0.15em",
-                      }}
-                    >
+                    <p style={{ color: "rgba(212,166,50,0.18)", fontSize: 11, letterSpacing: "0.15em" }}>
                       Replace image: null with your image path
                     </p>
                   </div>
@@ -263,11 +262,10 @@ export default function Portfolio() {
 
               <h2
                 style={{
-                  fontSize: "clamp(20px, 2.5vw, 28px)",
+                  fontSize: "clamp(18px, 2.5vw, 28px)",
                   fontWeight: 700,
                   letterSpacing: "0.06em",
-                  color:
-                    hovered === project.id ? "#f5d176" : "#f0ece0",
+                  color: hovered === project.id ? "#f5d176" : "#f0ece0",
                   marginBottom: 10,
                   transition: "color 0.3s ease",
                 }}
@@ -312,6 +310,7 @@ export default function Portfolio() {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
+              className="portfolio-link"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
