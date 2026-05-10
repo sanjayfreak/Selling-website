@@ -17,6 +17,12 @@ export default function FinalCTA() {
       position: "relative",
       overflow: "hidden",
     }}>
+      <style>{`
+        @media (max-width: 768px) {
+          .cta-section { padding: 80px 20px !important; }
+          .cta-btn { padding: 16px 32px !important; font-size: 13px !important; }
+        }
+      `}</style>
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 50 }}
@@ -24,7 +30,6 @@ export default function FinalCTA() {
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
         style={{ position: "relative", zIndex: 2, maxWidth: 860, margin: "0 auto" }}
       >
-        {/* Eyebrow */}
         <motion.p
           initial={{ opacity: 0, letterSpacing: "0.1em" }}
           animate={inView ? { opacity: 1, letterSpacing: "0.4em" } : {}}
@@ -37,11 +42,10 @@ export default function FinalCTA() {
           Limited Slots Available
         </motion.p>
 
-        {/* Heading */}
         <h2
           className="display"
           style={{
-            fontSize: "clamp(40px, 6vw, 68px)",
+            fontSize: "clamp(32px, 6vw, 68px)",
             lineHeight: 1.05, color: "#f0ece0",
             marginBottom: 8, letterSpacing: "0.06em",
           }}
@@ -51,7 +55,7 @@ export default function FinalCTA() {
         <h2
           className="display"
           style={{
-            fontSize: "clamp(40px, 6vw, 68px)",
+            fontSize: "clamp(32px, 6vw, 68px)",
             lineHeight: 1.05, marginBottom: 28,
             letterSpacing: "0.06em",
             background: "linear-gradient(90deg,#d4a632,#f5d176,#ffe599,#d4a632)",
@@ -65,7 +69,6 @@ export default function FinalCTA() {
           WEBSITE?
         </h2>
 
-        {/* Divider */}
         <motion.div
           initial={{ scaleX: 0 }}
           animate={inView ? { scaleX: 1 } : {}}
@@ -77,7 +80,6 @@ export default function FinalCTA() {
           }}
         />
 
-        {/* Subtext */}
         <p style={{
           fontSize: 17, color: "#a08868", lineHeight: 1.9,
           fontFamily: serif, letterSpacing: "0.02em",
@@ -87,11 +89,11 @@ export default function FinalCTA() {
           Let's build something that works for you 24/7.
         </p>
 
-        {/* CTA Button */}
         <motion.a
           href="https://wa.me/918124530116"
           target="_blank"
           rel="noopener noreferrer"
+          className="cta-btn"
           style={{
             display: "inline-flex", alignItems: "center", gap: 12,
             textDecoration: "none",
@@ -107,7 +109,6 @@ export default function FinalCTA() {
           <FaWhatsapp size={20} /> WhatsApp Me Now
         </motion.a>
 
-        {/* Fine print */}
         <p style={{
           marginTop: 22, fontSize: 12, color: "#5a4838",
           letterSpacing: "0.08em", fontFamily: serif,
@@ -116,7 +117,6 @@ export default function FinalCTA() {
         </p>
       </motion.div>
 
-      {/* Ambient glow */}
       <div style={{
         position: "absolute", top: "50%", left: "50%",
         transform: "translate(-50%,-50%)",

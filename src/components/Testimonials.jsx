@@ -18,6 +18,12 @@ export default function Testimonials() {
 
   return (
     <section id="reviews" style={{ padding: "100px 64px", background: "linear-gradient(180deg,#080808,#0c0a06)" }}>
+      <style>{`
+        @media (max-width: 768px) {
+          .reviews-section { padding: 72px 20px !important; }
+          .reviews-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <motion.div
           ref={ref}
@@ -40,7 +46,10 @@ export default function Testimonials() {
           />
         </motion.div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24 }}>
+        <div
+          className="reviews-grid"
+          style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24 }}
+        >
           {reviews.map((r, i) => (
             <motion.div
               key={r.name}

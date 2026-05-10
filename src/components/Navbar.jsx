@@ -18,6 +18,17 @@ export default function Navbar() {
 
   return (
     <>
+      <style>{`
+        .nav-links { display: flex; }
+        .hamburger-btn { display: none !important; }
+        @media (max-width: 768px) {
+          .nav-links { display: none !important; }
+          .hamburger-btn { display: flex !important; }
+          .nav-hire-btn { padding: 8px 14px !important; font-size: 11px !important; }
+          .nav-inner { padding: 0 20px !important; }
+        }
+      `}</style>
+
       <motion.nav
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -32,6 +43,7 @@ export default function Navbar() {
           borderBottom: "1px solid rgba(212,166,50,0.12)",
           transition: "background 0.3s ease",
         }}
+        className="nav-inner"
       >
         {/* Logo */}
         <motion.span
@@ -43,11 +55,11 @@ export default function Navbar() {
           whileHover={{ letterSpacing: "0.28em", color: "#f5d176" }}
           transition={{ duration: 0.35 }}
         >
-         FreakyWebDesigners
+          FreakyWebDesigners
         </motion.span>
 
         {/* Desktop Nav Links */}
-        <div style={{ display: "flex", gap: 40, alignItems: "center" }}>
+        <div className="nav-links" style={{ gap: 40, alignItems: "center" }}>
           {links.map((item, i) => (
             <motion.a
               key={item}
@@ -61,7 +73,6 @@ export default function Navbar() {
                 position: "relative",
                 color: activeHover === item ? "#f5d176" : "#b89a50",
                 textDecoration: "none",
-                fontSize: 12,
                 letterSpacing: "0.12em",
                 fontWeight: 500,
                 textTransform: "uppercase",
@@ -72,7 +83,6 @@ export default function Navbar() {
               }}
             >
               {item}
-              {/* Animated underline */}
               <motion.span
                 style={{
                   position: "absolute",
@@ -95,6 +105,7 @@ export default function Navbar() {
             href="https://wa.me/918124530116"
             target="_blank"
             rel="noopener noreferrer"
+            className="nav-hire-btn"
             style={{
               display: "inline-flex", alignItems: "center", gap: 8,
               background: "linear-gradient(135deg,#d4a632,#c8941a)",
@@ -108,14 +119,13 @@ export default function Navbar() {
             <FaWhatsapp size={14} /> Hire Me
           </motion.a>
 
-          {/* Hamburger — shown only on mobile via CSS class */}
           <motion.button
             onClick={() => setMenuOpen(!menuOpen)}
             className="hamburger-btn"
             style={{
               background: "none", border: "1px solid rgba(212,166,50,0.3)",
               color: "#d4a632", fontSize: 18, cursor: "pointer",
-              padding: "6px 8px", display: "none",
+              padding: "6px 8px", alignItems: "center", justifyContent: "center",
             }}
             whileHover={{ borderColor: "#d4a632" }}
           >

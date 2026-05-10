@@ -103,7 +103,7 @@ function ServiceCard({ s, i }) {
       </ul>
 
       <motion.a
-       href="https://wa.me/918124530116"
+        href="https://wa.me/918124530116"
         target="_blank" rel="noopener noreferrer"
         style={{
           display: "block", textAlign: "center", padding: "11px",
@@ -132,6 +132,12 @@ export default function Services() {
 
   return (
     <section id="services" style={{ padding: "100px 64px", background: "#080808" }}>
+      <style>{`
+        @media (max-width: 768px) {
+          .services-section { padding: 72px 20px !important; }
+          .services-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <motion.div
           ref={ref}
@@ -150,7 +156,10 @@ export default function Services() {
             style={{ width: 48, height: 1, background: "linear-gradient(90deg,transparent,#d4a632,transparent)", margin: "14px auto 0" }}
           />
         </motion.div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24 }}>
+        <div
+          className="services-grid"
+          style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24 }}
+        >
           {services.map((s, i) => <ServiceCard key={s.title} s={s} i={i} />)}
         </div>
       </div>

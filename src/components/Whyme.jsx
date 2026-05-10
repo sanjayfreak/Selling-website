@@ -20,6 +20,15 @@ export default function WhyMe() {
 
   return (
     <section id="why-me" style={{ padding: "100px 64px", background: "linear-gradient(180deg,#080808,#0c0a06,#080808)" }}>
+      <style>{`
+        @media (max-width: 768px) {
+          .whyme-section { padding: 72px 20px !important; }
+          .whyme-grid { grid-template-columns: 1fr 1fr !important; }
+        }
+        @media (max-width: 480px) {
+          .whyme-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <motion.div
           ref={ref}
@@ -42,7 +51,10 @@ export default function WhyMe() {
           />
         </motion.div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 20 }}>
+        <div
+          className="whyme-grid"
+          style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 20 }}
+        >
           {reasons.map((r, i) => (
             <motion.div
               key={r.title}

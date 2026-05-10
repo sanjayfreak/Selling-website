@@ -17,6 +17,13 @@ export default function HowItWorks() {
 
   return (
     <section id="process" style={{ padding: "100px 64px", background: "#080808" }}>
+      <style>{`
+        @media (max-width: 768px) {
+          .process-section { padding: 72px 20px !important; }
+          .process-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+          .process-connector { display: none !important; }
+        }
+      `}</style>
       <div style={{ maxWidth: 1000, margin: "0 auto" }}>
         <motion.div
           ref={ref}
@@ -39,12 +46,18 @@ export default function HowItWorks() {
           />
         </motion.div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 40, position: "relative" }}>
+        <div
+          className="process-grid"
+          style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 40, position: "relative" }}
+        >
           {/* Connector line */}
-          <div style={{
-            position: "absolute", top: 38, left: "20%", right: "20%", height: 1,
-            background: "linear-gradient(90deg,transparent,rgba(212,166,50,0.25),transparent)",
-          }} />
+          <div
+            className="process-connector"
+            style={{
+              position: "absolute", top: 38, left: "20%", right: "20%", height: 1,
+              background: "linear-gradient(90deg,transparent,rgba(212,166,50,0.25),transparent)",
+            }}
+          />
 
           {steps.map((s, i) => (
             <motion.div

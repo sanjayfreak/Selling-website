@@ -7,7 +7,7 @@ const socials = [
   { Icon: FaInstagram, href: "#", label: "Instagram" },
   { Icon: FaTwitter, href: "#", label: "Twitter" },
   { Icon: FaLinkedin, href: "#", label: "LinkedIn" },
-  { Icon: FaWhatsapp, href:"https://wa.me/918124530116", label: "WhatsApp" },
+  { Icon: FaWhatsapp, href: "https://wa.me/918124530116", label: "WhatsApp" },
 ];
 
 export default function Footer() {
@@ -19,8 +19,18 @@ export default function Footer() {
       display: "flex", alignItems: "center",
       justifyContent: "space-between", flexWrap: "wrap", gap: 16,
     }}>
+      <style>{`
+        @media (max-width: 768px) {
+          .footer-inner {
+            padding: 24px 20px !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+          }
+        }
+      `}</style>
       <span className="display" style={{ color: "#d4a632", fontSize: 18, letterSpacing: "0.22em" }}>
-      FreakyWebDesigners
+        FreakyWebDesigners
       </span>
       <p style={{ fontSize: 11, color: "#403020", letterSpacing: "0.06em", fontFamily: serif }}>
         © 2025 FreakyWebDesigners — Built with love in India

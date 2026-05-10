@@ -11,7 +11,6 @@ export default function Hero() {
       position: "relative", overflow: "hidden",
     }}>
 
-      {/* ✅ Background video */}
       <video
         autoPlay
         loop
@@ -29,16 +28,14 @@ export default function Hero() {
         <source src="/chip.mp4" type="video/mp4" />
       </video>
 
-      {/* ✅ Dark overlay so text stays readable */}
       <div style={{
         position: "absolute", inset: 0,
         background: "radial-gradient(ellipse 90% 70% at 50% 10%, rgba(212,166,50,0.13) 0%, transparent 60%), radial-gradient(ellipse 60% 80% at 85% 85%, rgba(180,100,20,0.08) 0%, transparent 50%), rgba(8,8,8,0.75)",
         zIndex: 1,
       }} />
 
-      {/* All your existing content — just add zIndex 2 */}
       <motion.div
-        style={{ position: "relative", zIndex: 2, maxWidth: 780 }}
+        style={{ position: "relative", zIndex: 2, maxWidth: 780, width: "100%" }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -62,7 +59,7 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
         >
           <h1 className="display" style={{
-            fontSize: "clamp(42px, 7vw, 76px)", lineHeight: 1.05, letterSpacing: "0.04em",
+            fontSize: "clamp(38px, 7vw, 76px)", lineHeight: 1.05, letterSpacing: "0.04em",
             marginBottom: 0, fontWeight: 700,
             background: "linear-gradient(90deg,#d4a632,#f5d176,#ffe599,#d4a632)",
             backgroundSize: "300% auto",
@@ -71,12 +68,12 @@ export default function Hero() {
           }}>WEBSITES</h1>
 
           <h1 className="display" style={{
-            fontSize: "clamp(42px, 7vw, 76px)", lineHeight: 1.05, letterSpacing: "0.04em",
+            fontSize: "clamp(38px, 7vw, 76px)", lineHeight: 1.05, letterSpacing: "0.04em",
             marginBottom: 0, fontWeight: 700, color: "#f0ece0",
           }}>THAT WIN</h1>
 
           <h1 className="display" style={{
-            fontSize: "clamp(42px, 7vw, 76px)", lineHeight: 1.05, letterSpacing: "0.04em",
+            fontSize: "clamp(38px, 7vw, 76px)", lineHeight: 1.05, letterSpacing: "0.04em",
             marginBottom: 0, fontWeight: 700,
             background: "linear-gradient(90deg,#d4a632,#f5d176,#ffe599,#d4a632)",
             backgroundSize: "300% auto",
@@ -150,7 +147,6 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Ambient glow */}
       <div style={{
         position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)",
         width: 600, height: 600, borderRadius: "50%", pointerEvents: "none",
